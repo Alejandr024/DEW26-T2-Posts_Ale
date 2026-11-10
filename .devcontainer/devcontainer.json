@@ -1,0 +1,28 @@
+{
+  "name": "DEW25-T2-Posts (Node 26 + pnpm + ESM + Jest)",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "remoteUser": "node",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "Orta.vscode-jest",
+        "usernamehw.errorlens",
+        "ChristianKohler.path-intellisense"
+      ],
+      "settings": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+          "source.fixAll.eslint": "explicit"
+        },
+        "npm.packageManager": "pnpm",
+        "jest.jestCommandLine": "pnpm test"
+      }
+    }
+  },
+  "postCreateCommand": "pnpm install"
+}
