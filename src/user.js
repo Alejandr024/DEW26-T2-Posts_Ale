@@ -9,8 +9,8 @@ class User {
     return `${this.name} is reading ${text}`;
   }
 
-  notify(Post) {
-    return `${this.name} is reading ${Post}`;
+  notify(post) {
+    return this.read(post.summary);
   }
 }
 

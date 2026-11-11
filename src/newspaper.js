@@ -1,6 +1,16 @@
-class Newspaper {
-  distric = "";
-  constructor(distric) {
-    this.distric = distric;
+import PaidPost from "./paid-post.js";
+
+class Newspaper extends PaidPost {
+  district = "";
+  constructor(name, price, district) {
+    super(name, price);
+    this.district = district;
+  }
+
+  get summary() {
+    return `${super.summary} of ${this.district}`;
   }
 }
+
+export { Newspaper };
+export default Newspaper;
