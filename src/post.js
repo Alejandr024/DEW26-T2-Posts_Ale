@@ -33,6 +33,15 @@ class Post {
       this.#subscribed.splice(indice, 1);
     }
   }
+
+  publish() {
+    this.#number++;
+    if (this.#subscribed.length > 0) {
+      return this.#subscribed.map((user) => user.notify(this));
+    } else {
+      return [];
+    }
+  }
 }
 export { Post };
 export default Post;
